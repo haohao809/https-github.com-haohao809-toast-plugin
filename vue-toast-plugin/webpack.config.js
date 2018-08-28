@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+var cleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
   entry: './src/lib/index.js',
@@ -100,6 +101,11 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
+    }),
+    new cleanWebpackPlugin(['./dist'],{
+      root: path.join(__dirname,''),
+      verbose: true,
+      dry:false
     })
   ])
 }
