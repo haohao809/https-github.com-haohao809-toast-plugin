@@ -66,11 +66,11 @@
     export default{
         data(){
             return{
-                message:'hello,Vue-toast',
                 visible:true,
                 show: false
             }
         },
+        props: ['message'],
         methods:{
             toast(){
                 this.show = true;
