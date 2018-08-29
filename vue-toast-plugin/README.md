@@ -1,5 +1,17 @@
 # vue-toast-plugin
 
+main.js 引入
+
+import VueToastPlugin from 'vue-toast-plugin'
+Vue.use(VueToastPlugin)
+
+
+Vue文件使用
+
+    <VueToastPlugin message="message">
+      <div>toast</div>
+    </VueToastPlugin>
+
 > A Vue.js project
 
 ## Build Setup
