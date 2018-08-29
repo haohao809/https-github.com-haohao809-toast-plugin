@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div class="toast-simple">
-            <a href="javascript:;" @click="toast">toast</a>
+        <div class="toast-simple" @click='toast'>
+            <slot></slot>
         </div>
         <section class="toast-container" v-if="show">
             <div class="toast" v-bind:class="[visible?'fade-in':'fade-out']">
@@ -80,9 +80,7 @@
                     setTimeout(()=>{
                        that.show = false;
                        that.visible = true;
-                       console.log('a');
                    },1000)
-                   console.log('b');
                 },800)
 
 
