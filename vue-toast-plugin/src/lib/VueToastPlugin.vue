@@ -20,7 +20,9 @@
             <div class="toast" v-bind:class="[visible?'fade-in':'fade-out']">
                 <p>{{message}}</p>
                 <p class="btn">
-                    <span class="btnMsg">{{confirmBtnMsgOK}}</span>
+                    <span class="btnMsg" @click="confirmOk">{{confirmBtnMsgOK}}</span>
+                    <i></i>
+                    <span class="btnMsg" @click="confirmCancel">{{confirmBtnMsgCancel}}</span>
                 </p>
             </div>
         </section>       
@@ -75,6 +77,11 @@
             color: white;
             border-radius: 13px;
         }
+        .btn{
+            display: flex;
+            justify-content: space-evenly;
+            margin: 0;
+        }
         .btn::before{
             content: '';
             position: absolute;
@@ -84,9 +91,12 @@
             left: 0;
             right: 0;
         }
+        i{
+            border-right: 1px soild #e5e5e5;
+        }
         .btnMsg{
             display: inline-block;
-            margin-top: 15px;
+            margin: 15px 0;
         }
     }
 </style>
@@ -112,6 +122,10 @@
             confirmBtnMsgOK: {
                 type: String,
                 default: '确定'
+            },
+            confirmBtnMsgCancel:{
+                type: String,
+                default: '取消'
             },
             toast:{
                 type: Boolean,
@@ -152,6 +166,20 @@
                 var that = this
                 setTimeout(()=>{
                         that.alertType = false;
+                        that.visible = true;
+                },1000)
+            },
+            confirmOk(){
+                this.visible = false;
+                setTimeout(()=>{
+                        that.confirmType = false;
+                        that.visible = true;
+                },1000)
+            },
+            confirmCancel(){
+                this.visible = false;
+                setTimeout(()=>{
+                        that.confirmType = false;
                         that.visible = true;
                 },1000)
             }
