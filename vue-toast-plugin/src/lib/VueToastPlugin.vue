@@ -138,9 +138,33 @@
                 type: Boolean,
                 default: false
             },
+            alertFunc: {
+                type: Function,
+                default: () => {
+                    return {
+
+                    }
+                }
+            },
             confirm:{
                 type: Boolean,
                 default: false
+            },
+            confirmOkFunc:{
+                type: Function,
+                default: () => {
+                    return {
+
+                    }
+                }
+            },
+            confirmCancelFunc:{
+                type: Function,
+                default: () => {
+                    return {
+
+                    }
+                }
             }
         },
         methods:{
@@ -167,6 +191,7 @@
             alertBtn(){
                 this.visible = false;
                 var that = this;
+                this.alertFunc();
                 setTimeout(()=>{
                         that.alertType = false;
                         that.visible = true;
@@ -175,6 +200,7 @@
             confirmOk(){
                 this.visible = false;
                 var that = this;
+                this.confirmOkFunc();
                 setTimeout(()=>{
                         that.confirmType = false;
                         that.visible = true;
@@ -182,6 +208,7 @@
             },
             confirmCancel(){
                 this.visible = false;
+                this.confirmCancelFunc();
                 var that = this;
                 setTimeout(()=>{
                         that.confirmType = false;
