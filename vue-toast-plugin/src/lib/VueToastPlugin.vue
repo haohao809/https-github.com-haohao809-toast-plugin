@@ -82,6 +82,9 @@
             justify-content: space-evenly;
             margin: 0;
         }
+        .btn:hover{
+            cursor:pointer;
+        }
         .btn::before{
             content: '';
             position: absolute;
@@ -92,7 +95,7 @@
             right: 0;
         }
         i{
-            border-right: 1px soild #e5e5e5;
+            border-right: 1px solid #e5e5e5;
         }
         .btnMsg{
             display: inline-block;
@@ -163,7 +166,7 @@
             },
             alertBtn(){
                 this.visible = false;
-                var that = this
+                var that = this;
                 setTimeout(()=>{
                         that.alertType = false;
                         that.visible = true;
@@ -171,6 +174,7 @@
             },
             confirmOk(){
                 this.visible = false;
+                var that = this;
                 setTimeout(()=>{
                         that.confirmType = false;
                         that.visible = true;
@@ -178,6 +182,7 @@
             },
             confirmCancel(){
                 this.visible = false;
+                var that = this;
                 setTimeout(()=>{
                         that.confirmType = false;
                         that.visible = true;
