@@ -7,7 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'vue-toast-plugin.js',
+    filename: 'vue-toast-plugin-anzh.js',
     library: 'VueToastPlugin',
     libraryTarget: 'umd',
     umdNamedDefine: true

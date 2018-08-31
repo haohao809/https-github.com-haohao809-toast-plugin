@@ -1,9 +1,9 @@
 {
-  "name": "vue-toast-plugin",
+  "name": "vue-toast-plugin-anzh",
   "description": "A Vue.js project",
   "version": "1.0.0",
   "author": "安志浩 <haohao809@126.com>",
-  "main": "dist/vue-toast-plugin.js",
+  "main": "dist/vue-toast-plugin-anzh.js",
   "license": "MIT",
   "private": false,
   "scripts": {
