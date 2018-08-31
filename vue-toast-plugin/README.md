@@ -7,10 +7,19 @@ Vue.use(VueToastPlugin)
 
 
 Vue文件使用
-
-    <VueToastPlugin message="message">
+toast 使用
+    <VueToastPlugin message="message" :toast="true">
       <div>toast</div>
     </VueToastPlugin>
+alert使用
+    <VueToastPlugin message="message" :alert="true" :alertFunc="alertFunc">
+      <div>alert</div>
+    </VueToastPlugin>
+confirm 使用
+ <VueToastPlugin message="message" :confirm="true" :confirmOkFunc = "confirmOkFunc" :confirmCancelFunc = "confirmCancelFunc">
+      <div>confirm</div>
+ </VueToastPlugin>
+confirmOkFunc 回调执行函数
 
 > A Vue.js project
 
